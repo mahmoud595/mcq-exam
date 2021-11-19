@@ -16,7 +16,11 @@ export const ResultPage = () => {
   return (
     <h1>
       {" "}
-      Your Result is {totalScore} / {totalQuestions.length * 10}
+      Your Result is{" "}
+      <span style={{ color: "#0052cc" }}>
+        {" "}
+        {((totalScore / (totalQuestions.length * 10)) * 100).toFixed(0)} %{" "}
+      </span>
     </h1>
   );
 };
