@@ -40,7 +40,6 @@ export const questionsReducer = (state = initialState, action) => {
       };
     case CREATE_EXAM:
       const exam = randomArrayShuffle(questions);
-      console.log(exam);
       return {
         ...state,
         questions: exam,

@@ -44,7 +44,7 @@ const Exam = styled(Grid)(({ theme }) => ({
     fontSize: "1.2em",
     width: "9em",
     margin: "30px auto 0",
-    "&:disabled": {
+    "& :disabled": {
       background: "#D0D0D0",
     },
   },
@@ -68,7 +68,6 @@ export const ExamPage = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const clickHandler = () => {
-    console.log(end);
     dispatch(getAnswer(selectedAnswer, questions[questionNumber].id));
 
     if (!end && selectedAnswer) {

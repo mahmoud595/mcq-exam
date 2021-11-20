@@ -5,7 +5,6 @@ import {
 } from "../types/questionsTypes";
 
 export const getAnswer = (answerId, questionId) => {
-  // console.log(answerId, questionId);
   return {
     type: GET_ANSWER,
     payload: {
