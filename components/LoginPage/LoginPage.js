@@ -11,8 +11,9 @@ const Login = styled(Grid)(({ theme }) => ({
   padding: "5.5em",
   display: "flex",
   marginTop: 30,
-  boxShadow: "12.8811px 7.11487px 75.0136px rgba(134, 134, 134, 0.1)",
+  boxShadow: " rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;",
   flexDirection: "column",
+  height: "fit-content",
 
   "& .loginTitle": {
     textAlign: "center",
@@ -29,6 +30,9 @@ const Login = styled(Grid)(({ theme }) => ({
       fontWeight: 600,
       textTransform: "capitalize",
       marginTop: 6,
+    },
+    "& .MuiInputLabel-root": {
+      fontSize: "1.2em",
     },
   },
   "& .btn": {
@@ -98,7 +102,13 @@ export const LoginPage = () => {
       <Typography variant="h3" className="loginTitle">
         Login
       </Typography>
-      <Box component="form" autoComplete="off" className="form" noValidate>
+      <Box
+        component="form"
+        autoComplete="off"
+        className="form"
+        noValidate
+        onSubmit={onSubmitHandler}
+      >
         <TextField
           error={!!errors["name"]}
           label="Name"
@@ -106,7 +116,6 @@ export const LoginPage = () => {
           className="textField"
           name="name"
           onChange={changeHandler}
-          onBlur={changeHandler}
           helperText={errors["name"]}
         />
         <TextField
@@ -116,7 +125,6 @@ export const LoginPage = () => {
           className="textField"
           name="email"
           onChange={changeHandler}
-          onBlur={changeHandler}
           helperText={errors["email"]}
         />
 
@@ -127,7 +135,6 @@ export const LoginPage = () => {
           className="textField"
           name="password"
           onChange={changeHandler}
-          onBlur={changeHandler}
           helperText={errors["password"]}
         />
         <LoadingButton
@@ -135,7 +142,6 @@ export const LoginPage = () => {
           type="submit"
           loading={loading}
           loadingPosition="start"
-          onClick={onSubmitHandler}
         >
           Login
         </LoadingButton>

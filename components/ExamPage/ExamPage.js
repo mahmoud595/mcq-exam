@@ -21,9 +21,13 @@ const Exam = styled(Grid)(({ theme }) => ({
   padding: "5.5em",
   display: "flex",
   marginTop: 30,
-  boxShadow: "12.8811px 7.11487px 75.0136px rgba(134, 134, 134, 0.1)",
+  boxShadow: " rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;",
   flexDirection: "column",
   width: "50%",
+  "@media (max-width:960px)": {
+    width: "90%",
+    padding: "3.3em",
+  },
   "& .questionHeader": {
     textAlign: "center",
   },
@@ -40,6 +44,9 @@ const Exam = styled(Grid)(({ theme }) => ({
     fontSize: "1.2em",
     width: "9em",
     margin: "30px auto 0",
+    "&:disabled": {
+      background: "#D0D0D0",
+    },
   },
   "& .formControl": {
     "& .MuiFormControlLabel-label ": {
@@ -108,7 +115,10 @@ export const ExamPage = () => {
         onClick={clickHandler}
         disabled={selectedAnswer ? false : true}
         sx={{
-          background: end ? "#008000 !important" : "#0052cc !important",
+          background: end ? "#008000 " : "#0052cc ",
+          "&:hover": {
+            background: end ? "#008000 " : "#0052cc ",
+          },
         }}
       >
         {end ? "Results" : "Next"}
